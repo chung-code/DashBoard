@@ -1,12 +1,12 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
 
-const data = {
+let data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [5, 5, 5, 5, 5, 5],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -40,21 +40,11 @@ const options = {
   },
 }
 
-// const VerticalBar = () => (
-//   <>
-//     <div className='header'>
-//       <h1 className='title'>Vertical Bar Chart</h1>
-//         <a>
-//           Github Source
-//         </a>
-//     </div>
-//     <Bar data={data} options={options} />
-//   </>
-// )
+// const VerticalBar = ({todos}) => {
+//   data.datasets[0].data = todos.data
 
-// export default VerticalBar
-
-const VerticalBar = () => {
+const VerticalBar = ({todos}) => {
+  data.datasets[0].data = todos.data
   return (
     <>
       <div className='header'>
